@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 
-import Home from "./components/Home/home";
-import Product from "./components/Products/Product";
-import Accessory from "./components/Accessories/Accessory";
-import Footer from "./components/Footer/Footer";
-import News from "./components/News/News";
-import Login from "./components/login/login";
-import Layout from "./components/Layout";
-import Cart from './components/Cart/Cart';
+import Home from "./pages/Home/home";
+import Product from "./pages/Products/Product";
+import Accessory from "./pages/Accessories/Accessory";
+import Footer from "./pages/Footer/Footer";
+import News from "./pages/News/News";
+import Login from "./pages/login/login";
+import Layout from "./pages/Layout";
+import Cart from "./pages/Cart/Cart";
+import Register from "./pages/Register/Register";
 function App() {
   return (
     <BrowserRouter>
@@ -19,8 +20,8 @@ function App() {
           <Route path="phukien" element={<Accessory />} />
           <Route path="tintuc" elemet={<News />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
-
         </Route>
       </Routes>
     </BrowserRouter>

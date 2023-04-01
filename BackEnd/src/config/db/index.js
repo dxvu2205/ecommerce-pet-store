@@ -1,12 +1,18 @@
-const mysql = require("mysql");
+const { Sequelize } = require ('sequelize');
 
-const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "dangxuanvu_doan",
+
+// Option 3: Passing parameters separately (other dialects)
+const sequelize = new Sequelize('dangxuanvu_0175', 'root', null, {
+  host: 'localhost',
+  dialect:'mysql',
+  logging: false,
 });
-
-module.exports = con;
-
-
+const connectdb = async () =>{
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+      } catch (error) {
+        console.error('Unable to connect to the database:', error);
+      }
+}
+module.exports = connectdb;

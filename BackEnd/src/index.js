@@ -1,17 +1,22 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3001;
 const handlebars = require("express-handlebars");
 const path = require("path");
 const route = require("./routes");
-const con = require('./config/db')
-
-const morgan = require("morgan");
-
-con.connect();
+const connectdb = require("./config/db") ;
+const cors =require ('cors');
 
 
-app.use(morgan("combined"));
+
+connectdb();
+
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  methods: ["POST", 'GET', 'PUT', "DELETE"]
+}))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 //
 app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
