@@ -12,7 +12,6 @@ import Cart from "./pages/Cart/Cart";
 import Register from "./pages/Register/Register";
 function App() {
   return (
-    <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -24,7 +23,6 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
-    </BrowserRouter>
   );
 }
 

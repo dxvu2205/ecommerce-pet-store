@@ -1,30 +1,24 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Product extends Model {
+  class Category extends Model {
 
     static associate(models) {
       // define association here
     }
   }
-  Product.init(
+  Category.init(
     {
       name: DataTypes.STRING,
       slug: DataTypes.STRING,
-      qty: DataTypes.STRING,
-      catagoryId: DataTypes.STRING,
-      imagesId: DataTypes.STRING,
       metakey: DataTypes.STRING,
-      title: DataTypes.STRING,
-      price: DataTypes.STRING,
-      price_sale: DataTypes.STRING,
       status: DataTypes.STRING
      
     },
     {
       sequelize,
-      modelName: "Product",
+      modelName: "Category",
     }
   );
-  return Product;
+  return Category;
 };

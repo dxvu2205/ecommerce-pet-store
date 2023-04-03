@@ -1,7 +1,7 @@
 
 import React, { memo } from 'react'
 
-const InputForm = ({ label, value, setValue, keyPayload, invalidFields, setInvalidFields, type ,placeholder}) => {
+const InputForm = ({ label, value, setValue, keyPayload, invalidFields, setInvalidFields, type, placeholder }) => {
     return (
         <div>
             <label htmlFor={keyPayload} className='text-xs' >{label}</label>
@@ -12,11 +12,11 @@ const InputForm = ({ label, value, setValue, keyPayload, invalidFields, setInval
                 value={value}
                 onChange={(e) => setValue(prev => ({ ...prev, [keyPayload]: e.target.value }))}
                 onFocus={() => setInvalidFields([])}
-                placeholder= {placeholder}
+                placeholder={placeholder}
             />
             {/* {invalidFields.length > 0 && invalidFields.some(i => i.name === keyPayload) && <small className='text-red-500 italic' >{invalidFields.find(i => i.name === keyPayload)?.message}</small>} */}
         </div>
     )
 }
 
-export default InputForm;
+export default memo(InputForm)
