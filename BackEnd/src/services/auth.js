@@ -42,4 +42,36 @@ const loginService = ({ phone, password }) =>
       reject(error);
     }
   });
-module.exports = { registerService, loginService };
+const getAllUserService = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const data = await db.User.findAll({
+        raw: true,
+      });
+      resolve(data);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+const destroyUserService = (userId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const data = await db.User.findOne({
+        where: { id: userId },
+      });
+      if (data) {
+        data.destroy();
+      }
+      resolve();
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+module.exports = {
+  registerService,
+  loginService,
+  getAllUserService,
+  destroyUserService,
+};

@@ -2,9 +2,9 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
-
     static associate(models) {
       // define association here
+      Product.belongsTo(models.Product, { foreignKey: "catagoryId" });
     }
   }
   Product.init(
@@ -18,8 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       price: DataTypes.STRING,
       price_sale: DataTypes.STRING,
-      status: DataTypes.STRING
-     
+      status: DataTypes.STRING,
     },
     {
       sequelize,

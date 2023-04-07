@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind Admin Template</title>
+    <title>ADMIN PetShop</title>
     <meta name="author" content="David Grzyb" />
     <meta name="description" content="" />
 
@@ -15,20 +15,23 @@
       @import
       url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
       .font-family-karla { font-family: karla; } .bg-sidebar { background:
-      #3d68ff; } .cta-btn { color: #3d68ff; } .upgrade-btn { background:
-      #1947ee; } .upgrade-btn:hover { background: #0038fd; } .active-nav-link {
-      background: #1947ee; } .nav-item:hover { background: #1947ee; }
-      .account-link:hover { background: #3d68ff; }
+      #fdfdfc; } .cta-btn { color: #ebff3a; } .upgrade-btn { background:
+      #ebff3a; } .upgrade-btn:hover { background: #ebff3a; } .active-nav-link {
+      background: #ebff3a; } .nav-item:hover { background: #ebff3a; }
+      .account-link:hover { background: #ebff3a; }
     </style>
   </head>
   <body class="bg-gray-100 font-family-karla flex">
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
       <div class="p-6">
-        <a
+        <a href="/">
+        <img
+        src="https://cdn.shopify.com/s/files/1/0309/7621/files/Group_609_160x40_crop_center@2x.png?v=1639489711"
           href="/"
-          class="text-white text-3xl font-semibold uppercase hover:text-gray-300"
-        >Admin</a>
+          class="text-black text-3xl font-semibold uppercase hover:text-gray-300"
+        ></img>
+        </a>
         <button
           class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center"
         >
@@ -36,45 +39,45 @@
           New Report
         </button>
       </div>
-      <nav class="text-white text-base font-semibold pt-3">
+      <nav class="text-black text-base font-semibold pt-3">
         <a
-          href="../products/"
-          class="flex items-center active-nav-link text-white py-4 pl-6 nav-item"
+          href="/products"
+          class="flex items-center active-nav-link text-black py-4 pl-6 nav-item"
         >
           <i class="fas fa-tachometer-alt mr-3"></i>
           Products
         </a>
         <a
-          href=""
-          class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
+          href="/category"
+          class="flex items-center text-black opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
         >
           <i class="fas fa-sticky-note mr-3"></i>
-          Blank Page
+          Category
         </a>
         <a
-          href="tables.html"
-          class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
+          href="/users"
+          class="flex items-center text-black opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
         >
           <i class="fas fa-table mr-3"></i>
-          Tables
+          User
         </a>
         <a
           href="forms.html"
-          class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
+          class="flex items-center text-black opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
         >
           <i class="fas fa-align-left mr-3"></i>
           Forms
         </a>
         <a
           href="tabs.html"
-          class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
+          class="flex items-center text-black opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
         >
           <i class="fas fa-tablet-alt mr-3"></i>
           Tabbed Content
         </a>
         <a
           href="calendar.html"
-          class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
+          class="flex items-center text-black opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
         >
           <i class="fas fa-calendar mr-3"></i>
           Calendar
@@ -82,14 +85,14 @@
       </nav>
       <a
         href="#"
-        class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4"
+        class="absolute w-full upgrade-btn bottom-0 active-nav-link text-black flex items-center justify-center py-4"
       >
         <i class="fas fa-arrow-circle-up mr-3"></i>
         Upgrade to Pro!
       </a>
     </aside>
 
-    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+    <div class="w-full flex justify-items-start  flex-col h-screen overflow-y-hidden">
       <!-- Desktop Header -->
       <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
         <div class="w-1/2"></div>
@@ -111,15 +114,15 @@
           >
             <a
               href="#"
-              class="block px-4 py-2 account-link hover:text-white"
+              class="block px-4 py-2 account-link hover:text-black"
             >Account</a>
             <a
               href="#"
-              class="block px-4 py-2 account-link hover:text-white"
+              class="block px-4 py-2 account-link hover:text-black"
             >Support</a>
             <a
               href="#"
-              class="block px-4 py-2 account-link hover:text-white"
+              class="block px-4 py-2 account-link hover:text-black"
             >Sign Out</a>
           </div>
         </div>
@@ -133,11 +136,11 @@
         <div class="flex items-center justify-between">
           <a
             href=""
-            class="text-white text-3xl font-semibold uppercase hover:text-gray-300"
+            class="text-black text-3xl font-semibold uppercase hover:text-gray-300"
           >Admin</a>
           <button
             @click="isOpen = !isOpen"
-            class="text-white text-3xl focus:outline-none"
+            class="text-black text-3xl focus:outline-none"
           >
             <i x-show="!isOpen" class="fas fa-bars"></i>
             <i x-show="isOpen" class="fas fa-times"></i>
@@ -148,63 +151,63 @@
         <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
           <a
             href="#"
-            class="flex items-center active-nav-link text-white py-2 pl-4 nav-item"
+            class="flex items-center active-nav-link text-black py-2 pl-4 nav-item"
           >
             <i class="fas fa-tachometer-alt mr-3"></i>
             Dashboard
           </a>
           <a
             href="blank.html"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-sticky-note mr-3"></i>
             Blank Page
           </a>
           <a
             href="tables.html"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-table mr-3"></i>
             Tables
           </a>
           <a
             href="forms.html"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-align-left mr-3"></i>
             Forms
           </a>
           <a
             href="tabs.html"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-tablet-alt mr-3"></i>
             Tabbed Content
           </a>
           <a
             href="calendar.html"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-calendar mr-3"></i>
             Calendar
           </a>
           <a
             href="#"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-cogs mr-3"></i>
             Support
           </a>
           <a
             href="#"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-user mr-3"></i>
             My Account
           </a>
           <a
             href="#"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
+            class="flex items-center text-black opacity-75 hover:opacity-100 py-2 pl-4 nav-item"
           >
             <i class="fas fa-sign-out-alt mr-3"></i>
             Sign Out

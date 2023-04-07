@@ -35,5 +35,73 @@ const getAllProductsService = (data) => {
     }
   });
 };
+const getProductsByIdService = (productId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const data = await db.Product.findOne({
+        where: {
+          id: productId,
+        },
+        raw: true,
+      });
+      if (data) {
+        resolve(data);
+      } else {
+        resolve(null);
+      }
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+const UpdateProductService = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const dataProduct = await db.Product.findOne({
+        where: { id: data.id },
+      });
+      if (dataProduct) {
+        dataProduct.name = data.name;
+        dataProduct.qty = data.qty;
+        dataProduct.imagesId = data.linkimages;
+        dataProduct.title = data.title;
+        dataProduct.price = data.price;
+        dataProduct.price_sale = data.price_sale;
+        dataProduct.status = data.status;
 
-module.exports = { getProductsService, getAllProductsService };
+        await dataProduct.save();
+
+        const newdata = await db.Product.findAll();
+        resolve(newdata);
+      } else {
+        resolve();
+      }
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+const deletesProductService = (productId)=>{
+  return new Promise(async(resolve, reject)=>{
+      try {
+        const data = await db.Product.findOne({
+          where: { id: productId}
+        });
+        if (data) {
+          data.destroy();
+        }
+        resolve();
+      } catch (error) {
+        reject(error)
+      }
+  })
+
+}
+
+module.exports = {
+  getProductsService,
+  getAllProductsService,
+  getProductsByIdService,
+  UpdateProductService,
+  deletesProductService
+};
